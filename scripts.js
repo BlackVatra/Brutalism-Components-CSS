@@ -1,4 +1,3 @@
-// filepath: /Users/vadymbas/Documents/Projects/my-frontend-project/scripts.js
 function setTheme(theme) {
   document.documentElement.setAttribute("theme", theme);
 }
@@ -21,3 +20,39 @@ document.addEventListener("keydown", function(event) {
     toggleTheme();
   }
 });
+
+function updateDropdownText(buttonId, link) {
+    const button = document.getElementById(buttonId);
+    const dropdownIcon = document.getElementById(buttonId.replace('Button', 'Icon'));
+    const selectedValue = link.dataset.value;
+
+    // Check if the same item is clicked again
+    if (button.innerText.includes(selectedValue)) {
+        button.innerText = buttonId.replace('DropdownButton', ' Dropdown');
+        dropdownIcon.innerText = 'arrow_drop_down'; // Reset to default icon
+    } else {
+        button.innerText = selectedValue;
+        dropdownIcon.innerText = 'arrow_drop_down'; // Update icon
+    }
+
+    button.classList.remove('elevated');
+    button.classList.add('pushed');
+
+    // Hide the dropdown after selecting an option
+    const dropdownContent = button.nextElementSibling;
+    dropdownContent.classList.remove('show');
+}
+
+function toggleDropdown(buttonId) {
+    const dropdownContent = document.getElementById(buttonId).nextElementSibling;
+    
+    // Close other open dropdowns
+    let dropdowns = document.getElementsByClassName("dropdown-content");
+    for (let i = 0; i < dropdowns.length; i++) {
+        if (dropdowns[i].classList.contains('show') && dropdowns[i] !== dropdownContent) {
+            dropdowns[i].classList.remove('show');
+        }
+    }
+
+    dropdownContent.classList.toggle('show');
+}
