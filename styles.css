@@ -32,10 +32,10 @@ body {
 /* Button kind */
 .elevated {
   display: inline-flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
-
-  margin: -3px 3px 3px -3px;
+  position: relative;
   transition: transform 120ms ease-out, box-shadow 120ms ease-out;
   box-shadow: var(--shadow-color) 3px 3px 0px 0px;
   font-family: "Outfit", sans-serif;
@@ -53,9 +53,10 @@ body {
 
 .pushed {
   display: inline-flex;
+  width: 100%;
   justify-content: center;
   align-items: center;
-  
+  position: relative; /* Add this */
   transition: transform 120ms ease-out, box-shadow 120ms ease-out, padding-bottom 120ms ease-out, padding-right 120ms ease-out, padding-top 120ms ease-out, padding-left 120ms ease-out;
   box-shadow: inset 0px 0px 0px 0px var(--shadow-color);
   font-family: "Outfit", sans-serif;
@@ -67,12 +68,19 @@ body {
 }
 .pushed:active {
   transition: transform 120ms ease-out, box-shadow 120ms ease-out, padding-bottom 120ms ease-out, padding-right 120ms ease-out, padding-top 120ms ease-out, padding-left 120ms ease-out;
-  padding-bottom: calc(-3px + var(--shift-bottom, 0px));
-  padding-right: calc(-3px + var(--shift-right, 0px));
-  padding-top: calc(3px + var(--shift-top, 0px));
-  padding-left: calc(3px + var(--shift-left, 0px));
   box-shadow: inset 3px 3px 0px 0px var(--shadow-color);
+  /* Shifting content */
+}
 
+.button-content {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.12s ease-out; /* Add this line */
+}
+
+.pushed:active .button-content {
+  transform: translate(3px, 3px);
 }
 
 
@@ -210,7 +218,7 @@ body {
 .error.elevated:active {
   background: var(--bg-error-primary_press);
   
-  color: var(--text-white-tertiary);
+  color: var (--text-white-tertiary);
 }
 
 .error.pushed {
@@ -282,10 +290,11 @@ body {
   padding: var(--instance-padding-2xs) var(--instance-padding-md);
   gap: var(--instance-gap_between-lg);
   border-radius: var(--instance-radius-xs);
-  --shift-top: var(--instance-padding-xs);
+  --shift-top: var(--instance-padding-2xs);
   --shift-bottom: var(--instance-padding-xs);
   --shift-left: var(--instance-padding-md);
   --shift-right: var(--instance-padding-md);
+  height: 28px;
 }
 
 /* Icon styles */
@@ -295,6 +304,57 @@ body {
   'wght' 400,
   'GRAD' 0,
   'opsz' 24
+}
+
+/* Dropdown Button styles */
+.dropdown {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.dropdown-button {
+  background-color: var(--bg-primary);
+  color: var(--text-secondary);
+  padding: 10px 16px;
+  font-size: var(--size-button);
+  font-family: "Outfit", sans-serif;
+  border: none;
+  cursor: pointer;
+  border-radius: var(--instance-radius-sm);
+  border: 1.3px solid var(--border-primary_subtle);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: var(--bg-tertiary);
+  width: 100%; /* Make it fill the parent */
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: var(--instance-radius-sm);
+}
+
+.dropdown-content a {
+  color: var(--text-secondary);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: var(--bg-secondary_hover);
+  color: var(--text-primary);
+}
+
+/* Show the dropdown content when the show class is applied */
+.dropdown-content.show {
+  display: block;
 }
 
 /* Table styles */
