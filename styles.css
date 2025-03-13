@@ -259,11 +259,6 @@ body {
   --shift-bottom: var(--instance-padding-md);
   --shift-left: var(--instance-padding-2xl);
   --shift-right: var(--instance-padding-2xl);
-  
-  /* Add the following lines to prevent layout shift */
-  box-sizing: border-box;
-  /* width: 100%;  Remove width: 100% */
-  display: inline-block; /* Add display: inline-block */
 }
 .sm {
   padding: var(--instance-padding-sm) var(--instance-padding-xl);
@@ -287,15 +282,10 @@ body {
   padding: var(--instance-padding-2xs) var(--instance-padding-md);
   gap: var(--instance-gap_between-lg);
   border-radius: var(--instance-radius-xs);
-  --shift-top: var(--instance-padding-2xs);
-  --shift-bottom: var(--instance-padding-2xs);
+  --shift-top: var(--instance-padding-xs);
+  --shift-bottom: var(--instance-padding-xs);
   --shift-left: var(--instance-padding-md);
   --shift-right: var(--instance-padding-md);
-
-  /* Add the following lines to prevent layout shift */
-  box-sizing: border-box;
-  /* width: 100%;  Remove width: 100% */
-  display: inline-block; /* Add display: inline-block */
 }
 
 /* Icon styles */
