@@ -32,7 +32,7 @@ body {
 /* Button kind */
 .elevated {
   display: inline-flex;
-  width: 100%;
+  /* width: 100%; */
   justify-content: center;
   align-items: center;
   position: relative;
@@ -53,7 +53,7 @@ body {
 
 .pushed {
   display: inline-flex;
-  width: 100%;
+  /* width: 100%; */
   justify-content: center;
   align-items: center;
   position: relative; /* Add this */
@@ -75,8 +75,9 @@ body {
 .button-content {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   transition: transform 0.12s ease-out; /* Add this line */
+  flex: 1;
 }
 
 .pushed:active .button-content {
@@ -288,7 +289,7 @@ body {
 }
 .xs2 {
   padding: var(--instance-padding-2xs) var(--instance-padding-md);
-  gap: var(--instance-gap_between-lg);
+  gap: var (--instance-gap_between-lg);
   border-radius: var(--instance-radius-xs);
   --shift-top: var(--instance-padding-2xs);
   --shift-bottom: var(--instance-padding-xs);
@@ -342,7 +343,7 @@ body {
 
 .dropdown-content a {
   color: var(--text-secondary);
-  padding: 12px 16px;
+  /* padding: 12px 16px; */
   text-decoration: none;
   display: block;
 }
@@ -350,6 +351,27 @@ body {
 .dropdown-content a:hover {
   background-color: var(--bg-secondary_hover);
   color: var(--text-primary);
+}
+
+.dropdown-content a.primary {
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  border: 1.3px solid var(--border-primary_subtle);
+}
+.dropdown-content a.primary:hover {
+  background: var(--bg-primary_hover);
+  color: var(--text-primary);
+}
+
+.dropdown-content a.brand {
+  background: var(--bg-brand-secondary);
+  color: var(--text-secondary_on-brand);
+  border: 1.3px solid var(--border-brand-primary_subtle);
+}
+
+.dropdown-content a.brand:hover {
+  background: var(--bg-brand-primary_hover);
+  color: var(--text-primary_on-brand);
 }
 
 /* Show the dropdown content when the show class is applied */

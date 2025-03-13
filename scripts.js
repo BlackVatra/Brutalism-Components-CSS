@@ -24,22 +24,31 @@ document.addEventListener("keydown", function(event) {
 function updateDropdownText(buttonId, link) {
     const button = document.getElementById(buttonId);
     const dropdownIcon = document.getElementById(buttonId.replace('Button', 'Icon'));
+    // link is the <a> element that was clicked
     const selectedValue = link.dataset.value;
+    const buttonContent = button.querySelector('.button-content');
+    const dropdownContent = button.nextElementSibling;
 
     // Check if the same item is clicked again
-    if (button.innerText.includes(selectedValue)) {
-        button.innerText = buttonId.replace('DropdownButton', ' Dropdown');
-        dropdownIcon.innerText = 'arrow_drop_down'; // Reset to default icon
+    if (buttonContent.innerText.includes(selectedValue)) {
+        buttonContent.innerHTML = `Secondary Dropdown <span id="${buttonId.replace('Button', 'Icon')}" class="material-symbols-rounded">arrow_drop_down</span>`;
     } else {
-        button.innerText = selectedValue;
-        dropdownIcon.innerText = 'arrow_drop_down'; // Update icon
+        buttonContent.innerHTML = `${selectedValue} <span id="${buttonId.replace('Button', 'Icon')}" class="material-symbols-rounded">arrow_drop_down</span>`;
+
+        // Remove 'brand' and 'secondary' class from other links and add to the selected link
+        const links = dropdownContent.querySelectorAll('a'); // Select all <a> elements
+        links.forEach(a => {
+            a.classList.remove('brand');
+            a.classList.add('secondary');
+        });
+        link.classList.remove('secondary');
+        link.classList.add('brand'); // Add 'brand' class to the clicked <a> element
     }
 
     button.classList.remove('elevated');
     button.classList.add('pushed');
 
     // Hide the dropdown after selecting an option
-    const dropdownContent = button.nextElementSibling;
     dropdownContent.classList.remove('show');
 }
 
