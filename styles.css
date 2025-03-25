@@ -371,7 +371,7 @@ body {
 
 .dropdown-content a.brand:hover {
   background: var(--bg-brand-primary_hover);
-  color: var(--text-primary_on-brand);
+  color: var (--text-primary_on-brand);
 }
 
 /* Show the dropdown content when the show class is applied */
@@ -405,4 +405,12 @@ th {
         overflow-x: auto;
         white-space: nowrap;
     }
+}
+
+/* Pattern styles */
+
+.pattern {
+  background-image: url('./assets/pattern-dots-sm.png');
+  background-size: 50px 50px;
+  background-repeat: repeat;
 }
