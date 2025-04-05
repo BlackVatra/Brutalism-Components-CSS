@@ -289,7 +289,7 @@
     --bg-error-primary: var(--error-500, #f04438);
     --bg-error-primary_hover: var(--error-400, #f97066);
     --bg-error-primary_press: var(--error-600, #d92d20);
-    --bg-error-tertiary: var(--error-500, #f04438);
+    --bg-error-tertiary: var(--error-900, #f04438);
 
     /* Success */
     --bg-success-primary: var(--success-500, #17b26a);
