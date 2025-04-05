@@ -1,0 +1,138 @@
+/* Table Container */
+.table-container {
+  overflow-x: auto;
+  background: var(--bg-primary_subtle);
+  border-radius: 8px;
+  margin: 20px 0;
+  position: relative;
+
+  display: flex;
+  align-items: flex-start;
+  align-self: stretch;
+
+  border-radius: var(--container-radius-sm);
+  outline: 1.3px solid var(--border-secondary);
+  background: var(--bg-primary_subtle);
+  padding-right: 0; /* Ensure no padding on the right side */
+}
+
+/* Table Styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: var(--text-secondary);
+}
+
+/* Header Styles */
+.table th {
+  padding: 0px 10px;
+  text-align: left;
+  font-weight: 400;
+  color: var(--text-quaternary);
+  white-space: nowrap;
+  height: 36px;
+  align-items: left;
+  gap: 4px;
+  align-self: stretch;
+
+  border-bottom: 1.3px solid var(--border-secondary);
+  background: var(--bg-secondary);
+}
+
+/* Cell Styles */
+.table td {
+  height: 52px;
+  padding: 0px 10px;
+  white-space: nowrap;
+  background: var(--bg-primary_subtle);
+}
+
+
+/* Add a centered vertical separator between table cells, excluding the last two */
+.table td:not(:nth-last-child(-n+2)) {
+  position: relative;
+}
+
+.table td:not(:nth-last-child(-n+2))::after {
+  content: '';
+  position: absolute;
+  top: 25%; /* Adjust to control the length */
+  bottom: 25%; /* Adjust to control the length */
+  right: 0;
+  width: 1px; /* Thickness of the line */
+  background-color: var(--border-secondary);
+}
+
+/* Status Styles */
+.status {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 12px;
+  border-radius: var(--instance-radius-xs);
+  font-weight: 500;
+  gap: 8px;
+}
+.status.in-progress {
+  background: var(--bg-brand-secondary);
+  color: var(--text-secondary);
+}
+.status.completed {
+  background: var(--bg-success-secondary);
+  color: var(--text-success-secondary);
+}
+.status.draft {
+  background: var(--bg-tertiary_subtle);
+  border: 1px dashed var(--border-secondary);
+}
+
+/* Hover effect for rows */
+.table tbody tr:hover {
+  background-color: var(--bg-primary_hover);
+}
+
+/* Make the last column (actions) sticky with pseudo-element border */
+.table th:last-child,
+.table td:last-child {
+  position: sticky;
+  right: 0;
+  z-index: 2; /* Ensure it stays above scrollbar and rows */
+}
+
+.table th:last-child::after,
+.table td:last-child::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -1px; /* Adjust to position the border */
+  width: 1px; /* Thickness of the border */
+  background-color: var(--border-tertiary);
+}
+
+/* Add spacing between buttons in the last column */
+.table td:last-child button:not(:last-child) {
+  margin-right: 8px;
+}
+
+/* Ensure scrollbar doesn't overlap with sticky column */
+.table-container::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  bottom: -4px; /* Position 4px below the table */
+  display: none; /* Hide scrollbar by default */
+}
+
+.table-container:hover::-webkit-scrollbar {
+  display: block; /* Show scrollbar on hover */
+}
+
+.table-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background: var(--border-secondary);
+  border-radius: 4px;
+}
+

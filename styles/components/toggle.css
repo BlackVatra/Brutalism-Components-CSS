@@ -1,0 +1,39 @@
+.toggle-nav {
+    --border: none;
+    --bg: none;
+    --bg_hover: var(--bg-secondary_hover);
+    --bg_press: var(--bg-secondary_press);
+    --fg: var(--fg-secondary);
+    --text: var(--text-secondary);
+    --text_hover: var(--text-primary);
+    --text_press: var(--text-tertiary);
+    position: relative;
+  }
+  
+  .toggle-nav:hover {
+    --border: var(--border-secondary_alt);
+  }
+  
+  .toggle-nav:active {
+    --border: var(--border-secondary_alt);
+  }
+  
+  .toggle-nav.selected {
+    --fg: var(--fg-brand-secondary);
+    --text: var(--text-brand-secondary);
+    --text_hover: var(--text-brand-primary);
+    --text_press: var(--text-brand-tertiary);
+    pointer-events: none;
+  }
+  
+  .toggle-nav .selected .icon {
+    font-variation-settings: "FILL" 0, "GRAD" 0;
+  }
+  .underline {
+    position: absolute;
+    bottom: 4px;
+    left: 24px;
+    right: 24px;
+    background-color: var(--bg-brand-primary);
+    height: 2px;
+  }

@@ -1,0 +1,114 @@
+h1, .h1 {
+    font-feature-settings: 'salt' on;
+    
+    font-family: Outfit;
+    font-size: var(--size-h-1);
+    font-style: normal;
+    font-weight: 800;
+    line-height: var(--height-h-1); /* 105.975% */
+    letter-spacing: 3.548px;
+}
+
+h2, .h2 {
+    font-feature-settings: 'salt' on;
+
+    font-family: Outfit;
+    font-size: var(--size-h-2);
+    font-style: normal;
+    font-weight: 600;
+    line-height: var(--height-h-2); /* 109.489% */
+    letter-spacing: 1.096px;
+}
+
+h3, .h3 {
+    font-family: Outfit;
+    font-size: var(--size-h-3);
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--height-h-3); /* 112.5% */
+    letter-spacing: 0.5px;
+}
+
+h4, .h4 {
+    font-family: Outfit;
+    font-size: var(--size-h-4);
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--height-h-4); /* 115.385% */
+    letter-spacing: 0.25px;
+}
+
+h5, .h5 {
+    font-family: Outfit;
+    font-size: var(--size-h-5);
+    font-style: normal;
+    font-weight: 700;
+    line-height: var(--height-h-5); /* 118.182% */
+    letter-spacing: 0.25px;
+}
+
+h6, .h6 {
+    font-family: Outfit;
+    font-size: var(--size-h-6);
+    font-style: normal;
+    font-weight: 600;
+    line-height: var(--height-h-6); /* 120% */
+    letter-spacing: 0.25px;
+}
+
+subtitle, .subtitle {
+    font-family: Outfit;
+    font-size: var(--size-subtitle);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--height-subtitle); /* 120% */
+    letter-spacing: 0.25px;
+}
+
+button, .button {
+    font-family: Outfit;
+    font-size: var(--size-button);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--height-button); /* 120% */
+    letter-spacing: 0.5px;
+}
+
+table, p1, .p1 {
+    font-family: Outfit;
+    font-size: var(--size-body-1);
+    font-style: normal;
+    font-weight: 400;
+    line-height: var(--height-body-1); /* 150% */
+    letter-spacing: 0.192px;
+}
+
+p2, .p2 {
+    font-family: Outfit;
+    font-size: var(--size-body-2);
+    line-height: var(--height-body-2); /* 150% */
+    font-weight: 400;
+    font-style: normal;
+
+    letter-spacing: 0.168px;
+}
+
+micro, .micro {
+    font-family: Outfit;
+    font-size: var(--size-micro);
+    font-style: normal;
+    font-weight: 500;
+    line-height: var(--height-micro); /* 150% */
+    letter-spacing: 0.275px;
+}
+
+nano, .nano {
+    font-family: Outfit;
+    font-size: var(--size-nano);
+    line-height: var(--height-nano); /* 150% */
+    font-style: normal;
+    font-weight: 600;
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
+}
+

@@ -11,299 +11,149 @@
     <script src="./scripts.js" defer></script>
 </head>
 <body>
-    <div class="btn-shadow-brand btn-radius-md">
-        <button id="theme-toggle" class="btn-surface-brand btn-size-md" aria-label="Toggle theme">
-            <span class="icon material-symbols-rounded">dark_mode</span>
-        </button>
-        toggle theme, press "T" to toggle theme with keyboard
-    </div>
+    <nav class="nav-main">
+        <div class="nav-container">
+            <img src="./assets/logo.svg" alt="ENS Logo" class="logo">
+            <div class="nav-buttons">
+                <button class="md toggle-nav" onclick="window.location.href='./components-showcase.html'">
+                    <span class="surface">
+                        <span>Components</span>
+                    </span>
+                </button>
+                <button class="toggle-nav md selected">
+                    <span class="surface">
+                        <span class="icon material-symbols-rounded">dashboard</span>
+                        <span>Documentation</span>
+                        <span class="underline"></span>
+                    </span>
+                </button>
+                <button class="toggle-nav md">
+                    <span class="surface">
+                        <span class="icon material-symbols-rounded">room_preferences</span>
+                        <span>Get Started</span>
+                        <span class="underline"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+    </nav>
     
-    <table>
-        <thead>
-            <tr>
-                <th>Size</th>
-                <th>Brand</th>
-                <th>Primary</th>
-                <th>Secondary</th>
-                <th>Error</th>
-                <th>Disabled</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>md</td>
-                <td>
-                    <button class="md brand pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                    <button class="md brand elevated">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-                <td>
-                    <button class="md primary pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                    <button class="md primary elevated">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-                <td>
-                    <button class="md secondary pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                    <button class="md secondary elevated">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-                <td>
-                    <button class="md error pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                    <button class="md error elevated">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-                <td>
-                    <button class="md disabled pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                    <button class="md disabled elevated">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>sm</td>
-                <td>
-                    <button class="sm brand pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-                 <td>
-                    <button class="sm primary pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-                <td>
-                    <button class="sm secondary pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-                <td>
-                    <button class="sm error pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-                <td>
-                    <button class="sm disabled pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>xs</td>
-                 <td>
-                    <button class="xs brand pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-                 <td>
-                    <button class="xs primary pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-                <td>
-                    <button class="xs secondary pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-                <td>
-                    <button class="xs error pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-                <td>
-                    <button class="xs disabled pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-            </tr>
-            <tr>
-                <td>2xs</td>
-                <td>
-                    <button class="xs2 brand pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-                <td>
-                    <button class="xs2 primary pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-                <td>
-                    <button class="xs2 secondary pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-                <td>
-                    <button class="xs2 error pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-                <td>
-                    <button class="xs2 disabled pushed">
-                        <span class="button-content">
-                            <span class="icon material-symbols-rounded">star</span>
-                            Button
-                        </span>
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <!-- 🚧 Content Starts Here 🚧 -->
+    <h4>Getting Started</h4>
+    <div class="content-container">
+        <section class="container-horizontal">
+            <button class="md brand elevated">
+                <span class="surface">
+                    <span class="icon material-symbols-rounded">add_circle</span>
+                    New Declaration
+                </span>
+            </button>
+            <button class="md disabled">
+                <span class="surface">
+                    Other features soon
+                </span>
+            </button>
+        </section>
 
-    <section style="width: 100%;">
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 1
+        <!-- 📋 Table Container 📋 -->
+        <div class="table-container">
+            <table class="table">
+                <thead class="p2">
+                    <tr>
+                        <th>My job reference</th>
+                        <th>Our job reference</th>
+                        <th>Departure port</th>
+                        <th>Status</th>
+                        <th>Arrival port</th>
+                        <th>Arrival date</th>
+                        <th>MRN number</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>INVOICE123</td>
+                        <td>JOB12345</td>
+                        <td>Calais</td>
+                        <td>
+                            <span class="status in-progress">
+                                <span class="material-symbols-rounded">directions_boat</span>
+                                In progress
+                            </span>
+                        </td>
+                        <td>Dover</td>
+                        <td>10.10.2025</td>
+                        <td>24GB2345654</td>
+                        <td>
+                            <button class="sm primary icon-only">
+                                <span class="surface">
+                                    <span class="icon material-symbols-rounded">content_copy</span>
+                                </span>
+                            </button>
+                            <button class="sm primary icon-only">
+                                <span class="surface">
+                                    <span class="icon material-symbols-rounded">download_2</span>
+                                </span>
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Example of a completed status row -->
+                    <tr>
+                        <td>INVOICE126</td>
+                        <td>JOB12348</td>
+                        <td>Berlin</td>
+                        <td>
+                            <span class="status completed">
+                                <span class="check-icon">✓</span>
+                                Completed
+                            </span>
+                        </td>
+                        <td>Liverpool</td>
+                        <td>13.10.2025</td>
+                        <td>24GB2345657</td>
+                        <td>
+                            <button class="sm primary icon-only">
+                                <span class="surface">
+                                    <span class="icon material-symbols-rounded">content_copy</span>
+                                </span>
+                            </button>
+                            <button class="sm primary icon-only">
+                                <span class="surface">
+                                    <span class="icon material-symbols-rounded">download_2</span>
+                                </span>
+                            </button>
+                        </td>
+                    </tr>
+                    <!-- Example of a draft status row -->
+                    <tr>
+                        <td>INVOICE130</td>
+                        <td>JOB12352</td>
+                        <td>Vienna</td>
+                        <td>
+                            <span class="status draft">
+                                <span class="draft-icon">✎</span>
+                                Draft
+                            </span>
+                        </td>
+                        <td>Oxford</td>
+                        <td>17.10.2025</td>
+                        <td>24GB2345661</td>
+                        <td>
+                            <button class="sm primary icon-only">
+                                <span class="surface">
+                                    <span class="icon material-symbols-rounded">content_copy</span>
+                                </span>
+                            </button>
+                            <button class="sm primary icon-only">
+                                <span class="surface">
+                                    <span class="icon material-symbols-rounded">download_2</span>
+                                </span>
+                            </button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 2
-        </div>
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 3
-        </div>
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 4
-        </div>
-    </section>
-    <section style="width: 100%;">
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 5
-        </div>
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 6
-        </div>
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 7
-        </div>
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 8
-        </div>
-    </section>
-    <section style="width: 100%;">
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 9
-        </div>
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 10
-        </div>
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 11
-        </div>
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 12
-        </div>
-    </section>
-    <section style="width: 100%;">
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 13
-        </div>
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 14
-        </div>
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 15
-        </div>
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 16
-        </div>
-    </section>
-    <section style="width: 100%;">
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 17
-        </div>
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 18
-        </div>
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 19
-        </div>
-        <div class="pattern" style="background-image: url('./assets/pattern-dots-md.png'); padding: 40px; border: 1px solid black;">
-            Pattern 20
-        </div>
-    </section>
+    </div>
 </body>
 </html>

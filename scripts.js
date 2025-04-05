@@ -13,7 +13,10 @@ function toggleTheme() {
 }
 
 // Example usage
-document.getElementById("theme-toggle").addEventListener("click", toggleTheme);
+const themeToggle = document.getElementById("theme-toggle");
+if (themeToggle) {
+    themeToggle.addEventListener("click", toggleTheme);
+}
 
 document.addEventListener("keydown", function(event) {
   if (event.key === "t") {
@@ -65,3 +68,55 @@ function toggleDropdown(buttonId) {
 
     dropdownContent.classList.toggle('show');
 }
+
+// Toggle Navigation functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const toggleNavButtons = document.querySelectorAll('.toggle-nav');
+    console.log('Found toggle buttons:', toggleNavButtons.length);
+    
+    // Set initial state - first button selected by default, others outlined
+    toggleNavButtons.forEach((button, index) => {
+        const icon = button.querySelector('.surface .icon');
+        const underline = button.querySelector('.surface .underline');
+        console.log('Button', index, 'icon found:', icon);
+        if (icon) {
+            if (index === 0) {
+                button.classList.add('selected');
+                icon.style.fontVariationSettings = '"FILL" 1, "GRAD" 0';
+                if (underline) underline.style.opacity = '1';
+            } else {
+                icon.style.fontVariationSettings = '"FILL" 0, "GRAD" 0';
+                if (underline) underline.style.opacity = '0';
+            }
+        }
+    });
+    
+    toggleNavButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            console.log('Button clicked');
+            // Remove selected class from all buttons
+            toggleNavButtons.forEach(btn => {
+                btn.classList.remove('selected');
+                const btnIcon = btn.querySelector('.surface .icon');
+                const btnUnderline = btn.querySelector('.surface .underline');
+                if (btnIcon) {
+                    btnIcon.style.fontVariationSettings = '"FILL" 0, "GRAD" 0';
+                }
+                if (btnUnderline) {
+                    btnUnderline.style.opacity = '0';
+                }
+            });
+            
+            // Add selected class to clicked button
+            this.classList.add('selected');
+            const selectedIcon = this.querySelector('.surface .icon');
+            const selectedUnderline = this.querySelector('.surface .underline');
+            if (selectedIcon) {
+                selectedIcon.style.fontVariationSettings = '"FILL" 1, "GRAD" 0';
+            }
+            if (selectedUnderline) {
+                selectedUnderline.style.opacity = '1';
+            }
+        });
+    });
+});
