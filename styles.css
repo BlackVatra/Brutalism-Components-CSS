@@ -55,6 +55,8 @@ button {
   --text_press: var(--text-tertiary);
   --bg: var(--bg-primary);
   color: var(--text);
+  white-space: nowrap;
+
 }
 .logo {
   height: 42px;

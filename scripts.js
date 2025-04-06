@@ -120,3 +120,13 @@ function setTheme(theme) {
           });
       });
   });
+
+  // Add event listeners to each table row
+  document.addEventListener("DOMContentLoaded", function() {
+    const tableRows = document.querySelectorAll('.table tbody tr');
+    tableRows.forEach(row => {
+        row.addEventListener('click', function() {
+            window.location.href = './form.html'; // Redirect to form.html
+        });
+    });
+  });
