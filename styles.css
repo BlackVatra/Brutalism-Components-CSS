@@ -26,7 +26,6 @@ html {
 }
 
 body {
-  gap: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: left;
@@ -42,8 +41,6 @@ body {
 button {
   position: relative;
   display: inline-flex;
-  /* width: 100%; */
-  justify-content: center;
   align-items: center;
   height: fit-content;
   overflow: hidden;

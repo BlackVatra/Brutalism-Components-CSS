@@ -1,195 +1,195 @@
 button .surface {
-    display: inline-flex;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    padding: var(--padding-v) var(--padding-h);
-    gap: var(--gap);
-    border-radius: var(--radius);
-    outline: 1.3px solid var(--border);
-    background-color: var(--bg);
-    transition: transform 0.1s;
-    color: var(--fg);
-    user-select: none;
-  }
+  display: inline-flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: var(--padding-v) var(--padding-h);
+  gap: var(--gap);
+  border-radius: var(--radius);
+  outline: 1.3px solid var(--border);
+  background-color: var(--bg);
+  transition: transform 0.1s;
+  color: var(--fg);
+  user-select: none;
+}
 
-  /* Make padding equal when surface only contains an icon */
-  button .surface:has(.icon:only-child) {
-    padding: var(--padding-v) var(--padding-v);
-  }
+/* Make padding equal when surface only contains an icon */
+button .surface:has(.icon:only-child) {
+  padding: var(--padding-v) var(--padding-v);
+}
 
-  button .icon {
-    font-size: 1.5rem;
-    user-select: none;
-  }
+button .icon {
+  font-size: 1.5rem;
+  user-select: none;
+}
+
+button:hover .surface {
+  background-color: var(--bg_hover);
+  color: var(--text_hover);
+}
+button:active .surface {
+  transform: translate(3px, 3px);
+  background-color: var(--bg_press);
+  color: var(--text_press);
+}
+button.elevated:active .surface {
+  transform: translate(0px, 0px);
+  background-color: var(--bg_press);
+  color: var(--text_press);
+}
+
+.elevated {
+  overflow: visible;
+}
+.elevated .surface {
+  transform: translate(-3px, -3px);
+}
+
+/* Type of button */
+.brand {
+  --border: var(--border-brand-primary_subtle);
+  --bg: var(--bg-brand-primary);
+  --bg_hover: var(--bg-brand-primary_hover);
+  --bg_press: var(--bg-brand-primary_press);
+  --fg: var(--fg-secondary_on-brand);
+  --text: var(--text-secondary_on-brand);
+  --text_hover: var(--text-primary_on-brand);
+  --text_press: var(--text-tertiary_on-brand);
+}
+.brand:not(.elevated) {
+  --border: var(--border-brand-primary);
+  --bg: var(--bg-brand-tertiary);
+  --bg_hover: var(--bg-brand-tertiary_hover);
+  --bg_press: var(--bg-brand-tertiary_press);
+  --fg: var(--fg-brand-secondary);
+  --text: var(--text-brand-secondary);
+  --text_hover: var(--text-brand-primary);
+  --text_press: var(--text-brand-tertiary);
+}
+
+.primary {
+  --border: var(--border-primary_subtle);
+  --bg: var(--bg-white-secondary);
+  --bg_hover: var(--bg-white-secondary_hover);
+  --bg_press: var(--bg-white-secondary_press);
+  --fg: var(--fg-dark-secondary);
+  --text: var(--text-dark-secondary);
+  --text_hover: var(--text-dark-primary);
+  --text_press: var(--text-dark-tertiary);
+}
+.primary:not(.elevated) {
+  --border: var(--border-secondary_alt);
+  --bg: var(--bg-secondary_subtle);
+  --bg_hover: var(--bg-secondary_hover);
+  --bg_press: var(--bg-secondary_press);
+  --fg: var(--fg-secondary);
+  --text: var(--text-secondary);
+  --text_hover: var(--text-primary);
+  --text_press: var(--text-tertiary);
+}
+
+.secondary {
+  --border: none;
+  --bg: none;
+  --bg_hover: var(--bg-secondary_hover);
+  --bg_press: var(--bg-secondary_press);
+  --fg: var(--fg-secondary);
+  --text: var(--text-secondary);
+  --text_hover: var(--text-primary);
+  --text_press: var(--text-tertiary);
+}
+.secondary:hover {
+  --border: var(--border-secondary_alt);
+}
+.secondary:active {
+  --border: var(--border-secondary_alt);
+}
+.secondary:not(.elevated) {
+  --border: none;
+  --bg: none;
+  --bg_hover: var(--bg-secondary_hover);
+  --bg_press: var(--bg-secondary_press);
+  --fg: var(--fg-secondary);
+  --text: var(--text-secondary);
+  --text_hover: var(--text-primary);
+  --text_press: var(--text-tertiary);
+}
+.secondary:not(.elevated):hover {
+  --border: var(--border-secondary_alt);
+}
+.secondary:not(.elevated):active {
+  --border: var(--border-secondary_alt);
+}
+
+.error {
+  --border: var(--border-error-primary_subtle);
+  --bg: var(--bg-error-primary);
+  --bg_hover: var(--bg-error-primary_hover);
+  --bg_press: var(--bg-error-primary_press);
+  --fg: var(--fg-secondary_on-error);
+  --text: var(--text-white-secondary);
+  --text_hover: var(--text-white-primary);
+  --text_press: var(--text-white-tertiary);
+}
+.error:not(.elevated) {
+  --border: var(--border-error-primary);
+  --bg: var(--bg-error-tertiary);
+  --bg_hover: var(--bg-error-primary_hover);
+  --bg_press: var(--bg-error-primary_press);
+  --fg: var(--fg-error-secondary);
+  --text: var(--text-error-secondary);
+  --text_hover: var(--text-white-primary);
+  --text_press: var(--text-white-tertiary);
+}
+
+.disabled {
+  --border: none;
+  --bg: none;
+  --bg_hover: var(--bg-disabled);
+  --bg_press: var(--bg-disabled);
+  --fg: var(--fg-disabled);
+  --text: var(--text-disabled);
+  --text_hover: var(--text-disabled);
+  --text_press: var(--text-disabled);
+  border: 1px dashed var(--border-tertiary);
+  user-select: none;  
+  pointer-events: none;
+}
+
+/* Button sizes */
+.md {
+  --radius: var(--instance-radius-sm);
+  --gap: var(--instance-gap_between-2xl);
+  --padding-v: var(--instance-padding-md);
+  --padding-h: var(--instance-padding-2xl);
   
-  button:hover .surface {
-    background-color: var(--bg_hover);
-    color: var(--text_hover);
-  }
-  button:active .surface {
-    transform: translate(3px, 3px);
-    background-color: var(--bg_press);
-    color: var(--text_press);
-  }
-  button.elevated:active .surface {
-    transform: translate(0px, 0px);
-    background-color: var(--bg_press);
-    color: var(--text_press);
-  }
-  
-  .elevated {
-    overflow: visible;
-  }
-  .elevated .surface {
-    transform: translate(-3px, -3px);
-  }
-  
-  /* Type of button */
-  .brand {
-    --border: var(--border-brand-primary_subtle);
-    --bg: var(--bg-brand-primary);
-    --bg_hover: var(--bg-brand-primary_hover);
-    --bg_press: var(--bg-brand-primary_press);
-    --fg: var(--fg-secondary_on-brand);
-    --text: var(--text-secondary_on-brand);
-    --text_hover: var(--text-primary_on-brand);
-    --text_press: var(--text-tertiary_on-brand);
-  }
-  .brand:not(.elevated) {
-    --border: var(--border-brand-primary);
-    --bg: var(--bg-brand-tertiary);
-    --bg_hover: var(--bg-brand-tertiary_hover);
-    --bg_press: var(--bg-brand-tertiary_press);
-    --fg: var(--fg-brand-secondary);
-    --text: var(--text-brand-secondary);
-    --text_hover: var(--text-brand-primary);
-    --text_press: var(--text-brand-tertiary);
-  }
-  
-  .primary {
-    --border: var(--border-primary_subtle);
-    --bg: var(--bg-white-secondary);
-    --bg_hover: var(--bg-white-secondary_hover);
-    --bg_press: var(--bg-white-secondary_press);
-    --fg: var(--fg-dark-secondary);
-    --text: var(--text-dark-secondary);
-    --text_hover: var(--text-dark-primary);
-    --text_press: var(--text-dark-tertiary);
-  }
-  .primary:not(.elevated) {
-    --border: var(--border-secondary_alt);
-    --bg: var(--bg-secondary_subtle);
-    --bg_hover: var(--bg-secondary_hover);
-    --bg_press: var(--bg-secondary_press);
-    --fg: var(--fg-secondary);
-    --text: var(--text-secondary);
-    --text_hover: var(--text-primary);
-    --text_press: var(--text-tertiary);
-  }
-  
-  .secondary {
-    --border: none;
-    --bg: none;
-    --bg_hover: var(--bg-secondary_hover);
-    --bg_press: var(--bg-secondary_press);
-    --fg: var(--fg-secondary);
-    --text: var(--text-secondary);
-    --text_hover: var(--text-primary);
-    --text_press: var(--text-tertiary);
-  }
-  .secondary:hover {
-    --border: var(--border-secondary_alt);
-  }
-  .secondary:active {
-    --border: var(--border-secondary_alt);
-  }
-  .secondary:not(.elevated) {
-    --border: none;
-    --bg: none;
-    --bg_hover: var(--bg-secondary_hover);
-    --bg_press: var(--bg-secondary_press);
-    --fg: var(--fg-secondary);
-    --text: var(--text-secondary);
-    --text_hover: var(--text-primary);
-    --text_press: var(--text-tertiary);
-  }
-  .secondary:not(.elevated):hover {
-    --border: var(--border-secondary_alt);
-  }
-  .secondary:not(.elevated):active {
-    --border: var(--border-secondary_alt);
-  }
-  
-  .error {
-    --border: var(--border-error-primary_subtle);
-    --bg: var(--bg-error-primary);
-    --bg_hover: var(--bg-error-primary_hover);
-    --bg_press: var(--bg-error-primary_press);
-    --fg: var(--fg-secondary_on-error);
-    --text: var(--text-white-secondary);
-    --text_hover: var(--text-white-primary);
-    --text_press: var(--text-white-tertiary);
-  }
-  .error:not(.elevated) {
-    --border: var(--border-error-primary);
-    --bg: var(--bg-error-tertiary);
-    --bg_hover: var(--bg-error-primary_hover);
-    --bg_press: var(--bg-error-primary_press);
-    --fg: var(--fg-error-secondary);
-    --text: var(--text-error-secondary);
-    --text_hover: var(--text-white-primary);
-    --text_press: var(--text-white-tertiary);
-  }
-  
-  .disabled {
-    --border: none;
-    --bg: none;
-    --bg_hover: var(--bg-disabled);
-    --bg_press: var(--bg-disabled);
-    --fg: var(--fg-disabled);
-    --text: var(--text-disabled);
-    --text_hover: var(--text-disabled);
-    --text_press: var(--text-disabled);
-    border: 1px dashed var(--border-tertiary);
-    user-select: none;  
-    pointer-events: none;
-  }
-  
-  /* Button sizes */
-  .md {
-    --radius: var(--instance-radius-sm);
-    --gap: var(--instance-gap_between-2xl);
-    --padding-v: var(--instance-padding-md);
-    --padding-h: var(--instance-padding-2xl);
-    
-    border-radius: var(--radius);
-    padding: 0px;
-  }
-  .sm {
-    --radius: var(--instance-radius-xs);
-    --gap: var(--instance-gap_between-xl);
-    --padding-v: var(--instance-padding-sm);
-    --padding-h: var(--instance-padding-xl);
-  
-    border-radius: var(--radius);
-    padding: 0px;
-  }
-  .xs {
-    --radius: var(--instance-radius-xs);
-    --gap: var(--instance-gap_between-lg);
-    --padding-v: var(--instance-padding-xs);
-    --padding-h: var(--instance-padding-lg);
-  
-    border-radius: var(--radius);
-    padding: 0px;
-  }
-  .xs2 {
-    --radius: var(--instance-radius-xs);
-    --gap: var(--instance-gap_between-lg);
-    --padding-v: var(--instance-padding-2xs);
-    --padding-h: var(--instance-padding-md);
-  
-    border-radius: var(--radius);
-    padding: 0px;
-  }
+  border-radius: var(--radius);
+  padding: 0px;
+}
+.sm {
+  --radius: var(--instance-radius-xs);
+  --gap: var(--instance-gap_between-xl);
+  --padding-v: var(--instance-padding-sm);
+  --padding-h: var(--instance-padding-xl);
+
+  border-radius: var(--radius);
+  padding: 0px;
+}
+.xs {
+  --radius: var(--instance-radius-xs);
+  --gap: var(--instance-gap_between-lg);
+  --padding-v: var(--instance-padding-xs);
+  --padding-h: var(--instance-padding-lg);
+
+  border-radius: var(--radius);
+  padding: 0px;
+}
+.xs2 {
+  --radius: var(--instance-radius-xs);
+  --gap: var(--instance-gap_between-lg);
+  --padding-v: var(--instance-padding-2xs);
+  --padding-h: var(--instance-padding-md);
+
+  border-radius: var(--radius);
+  padding: 0px;
+}

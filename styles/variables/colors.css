@@ -1,4 +1,4 @@
-  [theme="Light"] {
+[theme="Light"] {
     /* Text */
     /* Base */
     --text-primary: var(--gray-900, #181d27);
@@ -154,7 +154,7 @@
     --bg-special-tooptip: #ffffffcc;
   }
 
-  [theme="Dark"] {
+[theme="Dark"] {
     /* Text */
     /* Base */
     --text-primary: var(--gray-50, #fafafa);
