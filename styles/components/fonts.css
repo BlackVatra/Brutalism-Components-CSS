@@ -51,7 +51,7 @@ h6, .h6 {
     font-family: Outfit;
     font-size: var(--size-h-6);
     font-style: normal;
-    font-weight: 600;
+    font-weight: 500;
     line-height: var(--height-h-6); /* 120% */
     letter-spacing: 0.25px;
 }

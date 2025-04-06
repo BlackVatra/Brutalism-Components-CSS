@@ -8,7 +8,7 @@
   padding-right: 0;
   overflow-x: auto;
   border-radius: var(--container-radius-sm);
-  outline: 1.3px solid var(--border-secondary);
+  outline: 1.3px solid var(--border-secondary_alt);
   background: var(--bg-primary_subtle);
 }
 
@@ -32,7 +32,7 @@
   height: 36px;
   font-weight: 400;
   color: var(--text-quaternary);
-  border-bottom: 1.3px solid var(--border-secondary);
+  border-bottom: 1.3px solid var(--border-secondary_alt);
   background: var(--bg-secondary);
   border-left: none !important;
 }
@@ -40,11 +40,12 @@
 /* Cell Styles */
 .table td {
   height: 52px;
+  vertical-align: middle; /* Center content vertically */
 }
 
 /* Row Styles */
 .table tbody tr {
-  border-bottom: 1.3px solid var(--border-tertiary);
+  border-bottom: 1.3px solid var(--border-tertiary_alt);
 }
 
 .table tbody tr:last-child {
@@ -56,18 +57,18 @@
 }
 
 /* Vertical Separators for cells */
-.table td:not(:nth-last-child(-n+2)) {
+.table td:not(:has(.status)):not(:has(+ td .status)):not(:last-child):not(:nth-last-child(2)) {
   position: relative;
 }
 
-.table td:not(:nth-last-child(-n+2))::after {
+.table td:not(:has(.status)):not(:has(+ td .status)):not(:last-child):not(:nth-last-child(2))::after {
   content: '';
   position: absolute;
   top: 25%;
   bottom: 25%;
   right: 0;
   width: 1.3px;
-  background-color: var(--border-tertiary);
+  background-color: var(--border-tertiary_alt);
   border-radius: var(--instance-radius-full);
 }
 
@@ -96,10 +97,8 @@
   bottom: 0;
   left: 0px;
   width: 1px;
-  background-color: var(--border-tertiary);
+  background-color: var(--border-tertiary_alt);
 }
-
-
 
 .table td:last-child > * {
   display: inline-block;
@@ -119,8 +118,10 @@
 
 /* Status Indicators */
 .status {
-  display: inline-flex;
-  align-items: center;
+  position: relative;
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
   padding: 6px 12px;
   border-radius: var(--instance-radius-xs);
   font-weight: 500;
@@ -134,10 +135,20 @@
 
 .status.completed {
   background: var(--bg-success-secondary);
-  color: var(--text-success-secondary);
 }
 
 .status.draft {
   background: var(--bg-tertiary_subtle);
   border: 1px dashed var(--border-secondary);
+}
+
+/* Status cell alignment */
+.table td:has(.status) {
+  text-align: right;
+}
+
+/* Align cells before status and their headers */
+.table td:has(+ td .status),
+.table th:nth-child(3) {
+  text-align: right;
 }

@@ -28,7 +28,7 @@ html {
 body {
   display: flex;
   flex-direction: column;
-  align-items: left;
+  align-items: stretch;
   margin: 0;
   gap: var(--container-gap_between-3xl);
   background-color: var(--bg-tertiary);
