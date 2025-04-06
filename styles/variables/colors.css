@@ -47,6 +47,7 @@
     --border-secondary: var(--gray-300, #d5d7da);
     --border-secondary_alt: var(--gray-300, #d5d7da);
     --border-tertiary: var(--gray-200, #e9eaeb);
+    --border-tertiary_alt: var(--gray-200, #e9eaeb);
 
     /* Brand */
     --border-brand-primary: var(--brand-400, #3e97e4);
@@ -203,6 +204,8 @@
     --border-secondary: var(--gray-600, #535862);
     --border-secondary_alt: var(--gray-500, #717680);
     --border-tertiary: var(--gray-800, #252b37);
+    --border-tertiary_alt: var(--gray-600, #e9eaeb);
+
 
     /* Brand */
     --border-brand-primary: var(--brand-500, #1c7ed2);
