@@ -14,25 +14,30 @@
 <body>
     <nav class="nav-main">
         <div class="nav-container">
-            <img src="./assets/logo.svg" alt="ENS Logo" class="logo">
             <div class="nav-buttons">
-                <button class="md toggle-nav" onclick="window.location.href='./components-showcase.html'">
+                <button class="sm primary icon-only" onclick="window.location.href='./index.html'">
                     <span class="surface">
-                        <span>Components</span>
+                        <span class="icon material-symbols-rounded">arrow_left_alt</span>
                     </span>
                 </button>
-                <button class="toggle-nav md selected">
+                <h5>New Form:</h5>
+            </div>
+            <div class="nav-buttons">
+            <div class="nav-buttons">
+                <button class="md error icon-only">
                     <span class="surface">
-                        <span class="icon material-symbols-rounded">dashboard</span>
-                        <span>Documentation</span>
-                        <span class="underline"></span>
+                        <span class="icon material-symbols-rounded">delete_forever</span>
                     </span>
                 </button>
-                <button class="toggle-nav md">
+                <button class="md primary icon-only">
                     <span class="surface">
-                        <span class="icon material-symbols-rounded">room_preferences</span>
-                        <span>Get Started</span>
-                        <span class="underline"></span>
+                        <span class="icon material-symbols-rounded">save_as</span>
+                    </span>
+                </button>
+                <button class="md disabled">
+                    <span class="surface">
+                        Submit
+                        <span class="icon material-symbols-rounded">check</span>
                     </span>
                 </button>
             </div>
@@ -40,18 +45,36 @@
     </nav>
     
     <!-- 🚧 Content Starts Here 🚧 -->
-    <h4>Getting Started</h4>
-    <p1>Creating a new GB ENS form is a straightforward process. <p> (this text is just placeholder) Start by gathering all necessary information, such as the applicant's details and the specific requirements for the form.
-        Let's start with your status: select Accompanied to provide details about accompanying individuals, or Unaccompanied if you are alone—fields will adjust accordingly.</p1>
-    <div class="content-container" style="display: flex; justify-content: space-between; flex-wrap: wrap;">
-        <div class="content-container" style="flex: 1; margin-right: 10px;">
-            <h6>Transport Details:</h6>
+    <div class="container hor">
+        <section class="p1 max-w-md container-vertical">
+            <h4>Create New GB ENS Form</h4>
+            Creating a new GB ENS form is a straightforward process. <p> (this text is just placeholder) Start by gathering all necessary information, such as the applicant's details and the specific requirements for the form.
+            Let's start with your status: select Accompanied to provide details about accompanying individuals, or Unaccompanied if you are alone—fields will adjust accordingly.
+        </section>
+        <img src="./assets/flaggy_asset.svg" alt="Flaggy">
+    </div>
+
+    <div class="flex ver gap-md">
+        <div class="container_subtle items-start">
+            <section class="label-heading">
+                <h6>Transport Details:</h6>
+            </section>
         </div>
-        <div class="content-container" style="flex: 1; margin-right: 10px;">
-            <h6>Getting Started</h6>
+        <!-- horizontal section -->
+        <div class="flex hor items-start gap-lg">
+            <div class="container_subtle items-start w-fill">
+                <h6 class="label-heading">Consignee Details:</h6>
+            </div>
+            <div class="container_subtle items-start w-fill">
+                <h6 class="label-heading">Consignor Details:</h6>
+            </div>
+            <div class="container_subtle items-start w-fill">
+                <h6 class="label-heading">Carrier Details:</h6>
+            </div>
         </div>
-        <div class="content-container" style="flex: 1;">
-            <h6>Consignment Details:</h6>
+        <div class="container_subtle items-start">
+            <h6 class="label-heading">Consignment Details:</h6>
+            <h6 class="label-heading">Goods:</h6>
         </div>
     </div>
 </body>
