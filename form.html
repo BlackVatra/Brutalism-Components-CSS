@@ -59,6 +59,51 @@
             <section class="label-heading">
                 <h6>Transport Details:</h6>
             </section>
+            <form class="flex hor form-transport-details w-fill">
+                <div class="container_subtle gap-sm items-start w-fill">
+                    <label for="reference-number">Your Reference Number:</label>
+                    <input type="text" id="reference-number" name="reference-number" placeholder="Enter reference number">
+                    
+                    <label for="departure-port">Departure Port:</label>
+                    <select id="departure-port" name="departure-port">
+                        <option value="" disabled selected>Select departure port</option>
+                        <!-- Add options here -->
+                    </select>
+                    
+                    <label for="arrival-port">Arrival Port:</label>
+                    <select id="arrival-port" name="arrival-port">
+                        <option value="" disabled selected>Select arrival port</option>
+                        <!-- Add options here -->
+                    </select>
+                </div>
+                <div class="container_subtle gap-sm items-start w-fill">
+                    <label for="ferry-operator">Ferry Operator:</label>
+                    <select id="ferry-operator" name="ferry-operator">
+                        <option value="" disabled selected>Select ferry operator</option>
+                        <!-- Add options here -->
+                    </select>
+
+                    <label for="imo-number">IMO Number:</label>
+                    <input type="text" id="imo-number" name="imo-number" placeholder="Enter IMO number">
+
+                    <label for="expected-date-arrival">Expected Date of Arrival:</label>
+                    <input type="date" id="expected-date-arrival" name="expected-date-arrival">
+
+                    <label for="expected-time-arrival">Expected Time of Arrival:</label>
+                    <input type="time" id="expected-time-arrival" name="expected-time-arrival">
+                </div>
+                <div class="container_subtle gap-sm items-start w-fill">
+                    <label for="countries-routing">Countries of Routing:</label>
+                    <div class="multi-select-container">
+                        <select id="countries-routing" name="countries-routing" multiple>
+                            <!-- Add options here -->
+                        </select>
+                        <div class="selected-tags">
+                            <!-- Selected tags will appear here -->
+                        </div>
+                    </div>
+                </div>
+            </form>
         </div>
         <!-- horizontal section -->
         <div class="flex hor items-start gap-lg">
